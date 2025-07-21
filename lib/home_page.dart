@@ -11,7 +11,7 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController _taskController = TextEditingController();
   final List<String> _tasks = [];
 
-  // ✅ Correct: _addTask is now a top-level method inside the State class
+ 
   void _addTask() {
     final text = _taskController.text.trim();
     if (text.isNotEmpty) {
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  // ✅ Correct: _removeTask is now outside _addTask
+  
   void _removeTask(int index) {
     setState(() {
       _tasks.removeAt(index);
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            // ✅ Input Row comes first
+            
             Row(
               children: [
                 Expanded(
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
 
             const SizedBox(height: 20), // spacing between input and list
 
-            // ✅ Task list comes after the input row
+            
             Expanded(
               child: ListView.builder(
                 itemCount: _tasks.length,
